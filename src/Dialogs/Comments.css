@@ -1,0 +1,92 @@
+.comments {
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.316);
+    flex: 1;
+    min-width: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments .comment {
+    margin: 10px;
+    position: relative;
+    border-radius: 10px 10px 10px 0px;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: rgba(30, 32, 32, 0.253);
+}
+
+.comments * {
+    background-color: transparent;
+}
+
+.comments .comment .commentorName {
+    top:-20px;
+    font-size: small;
+    position: absolute;
+}
+
+.comments .comment .commentDate {
+    top:-25px;
+    right: 20px;
+    font-size: smaller;
+    position: absolute;
+}
+
+
+.comments .commentsBox {
+    background-color: transparent;
+    position: relative;
+    flex: 8;
+    border-radius: 20px 20px 0px 0px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.comments .nameBox {
+    border-radius: 0px;
+    font-size: larger;
+    border: none;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.397);
+    padding-left: 10px;
+
+}
+
+.comments .addCommentBox {
+    border-radius: 10px;
+    font-size: larger;
+    border: none;
+    border-radius: 0px 0px 20px 20px;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.47);
+    padding-left: 10px;
+    padding-right: 45px;
+}
+
+.comments .nameBox:focus {
+    border: 0px;
+    outline: none;
+
+}
+
+.comments .addCommentBox:focus {
+    border: 0px;
+    outline: none;
+}
+
+.submitButton {
+    background-color: transparent;
+    position: absolute;
+    bottom: 15px;
+    right: 5px;
+    font-size: 25px;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.content{
+    display: grid;
+    overflow: auto;
+}
+
+.allBody{
+    margin-top: 3dvh;
+}
+
+

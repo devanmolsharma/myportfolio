@@ -1,0 +1,135 @@
+.navigation {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+
+.resumeButton {
+    transition: 400ms;
+    background-color: rgba(255, 55, 0, 0.475);
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 5;
+}
+
+.resumeButton:hover {
+    cursor: pointer;
+    top: 15px;
+    background-color: rgba(255, 166, 0, 0.53);
+}
+
+
+.resumeButton.clicked {
+    /* top: 10vh;
+    left: 10vw; */
+    top: 10px;
+    left: 10px;
+    width: 90vw;
+    height: 95%;
+    background-color: rgba(255, 166, 0, 0.505);
+}
+
+.resumeButton.clicked.loaded .resumeDialog {
+    visibility: visible;
+}
+
+.resumeButton.clicked:hover {
+    cursor: default;
+}
+
+.resumeButton.clicked b,
+.book {
+    display: none;
+}
+
+.Mike {
+    flex-basis: 35px;
+}
+
+.TopCamera {position: absolute;
+    left: 5px;
+    top:15px;
+    flex-basis: 35px;
+}
+
+.TopBell {
+    flex-basis: 35px;
+}
+
+.Spacer {
+    flex: 1;
+}
+
+
+.Profile {
+    flex-basis: 20;
+    position: relative;
+    top: 10px;
+}
+
+.navigation .book {
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.searchInput {
+    flex: 1;
+}
+
+.navigation .searchBar {
+    flex: 4;
+    display: flex;
+    align-items: baseline;
+    padding-left: 40px;
+    width: 40%;
+}
+
+.navigation>div>b {
+    font-weight: lighter;
+    font-size: 0.8em;
+    position: relative;
+    bottom: 3px;
+    background-color: transparent;
+}
+
+@media (min-width:500px) {
+    .resumeButton {
+        position: absolute;
+        top: 20px;
+        left: 60px;
+        bottom: 0px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+}
+
+
+.resumeClose{
+    display: none;
+}
+
+.resumeButton.clicked .resumeClose {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.resumeButton.clicked .resumeClose:hover{
+    cursor: pointer;
+}

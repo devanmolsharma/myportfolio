@@ -1,0 +1,23 @@
+
+.iconbg{
+    display:inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.icon{
+    position: relative;
+    left: 6px;
+    top:6px;
+    background-color: transparent;
+}
+
+.iconbg:hover,.iconbg:focus{
+    background-color: rgba(128, 128, 128, 0.345);
+    cursor: pointer;
+}
+
+.iconbg:active{
+    background-color: rgba(128, 128, 128, 0.716);
+}

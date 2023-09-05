@@ -1,0 +1,23 @@
+
+.buttonImage{
+    display:inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.imgbg{
+    /* position: relative;
+    left: 6px;
+    top:12px; */
+    background-color: transparent;
+}
+
+.buttonImage:hover,.buttonImage:focus{
+    background-color: rgba(128, 128, 128, 0.345);
+    cursor: pointer;
+}
+
+.buttonImage:active{
+    background-color: rgba(128, 128, 128, 0.716);
+}

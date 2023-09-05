@@ -1,0 +1,25 @@
+.aboutMe .background {
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    height: 90%;
+    opacity: 0.3;
+    z-index: -10;
+}
+
+.aboutMe {
+    z-index: -1;
+    text-align: center;
+}
+
+.aboutMe .description {
+    position: absolute;
+    background-color: transparent;
+    bottom: 100px;
+    right: 40px;
+    font-size: 4em;
+    font-family: cursive;
+    color: orangered;
+    opacity: 0.3;
+    font-weight: bolder;
+}

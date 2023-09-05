@@ -1,0 +1,150 @@
+.projectDialog {
+    background-color: rgba(41, 43, 44, 0.873);
+    width: 90%;
+    height: 90%;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    scrollbar-width: none;
+    justify-content: center;
+
+}
+
+.projectDialog .thumbnail {
+    margin: 30px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.27);
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 250px;
+}
+
+.projectDialog .project {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+}
+
+.projectDialog .description {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+    color: rgba(255, 255, 255, 0.781);
+    margin: 30px;
+    border-radius: 20px;
+    background-color: transparent;
+    width: 500px;
+    background-size: 100%;
+    min-height:fit-content;
+    flex: 1;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 10px;
+    text-align: center;
+}
+
+.projectDialog .dialogComments {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+    position: relative;
+}
+
+.projectDialog .thingsLearnt {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+    margin: 10px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.27);
+    flex: 1;
+    min-width: 250px;
+    max-width: 250px;
+    background-repeat: no-repeat;
+    overflow: scroll;
+    max-height: 90%;
+    position: relative;
+}
+
+.projectDialog .exitIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.projectDialog .exitIcon:hover {
+    cursor: pointer;
+}
+
+.thingsLearnt .learntThing {
+    color: rgba(255, 255, 255, 0.521);
+    height: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 13px;
+    width: 90%;
+    font-size: larger;
+    background-color: rgba(39, 36, 36, 0.574);
+}
+
+.thingsLearntTitle {
+    padding-top: 15px;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.705);
+    height: 40px;
+
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+@media (max-width:700px) {
+    .projectDialog{
+        overflow-x: visible;
+    }
+
+    .project{
+        
+    }
+    .projectDialog .thumbnail{
+        width:auto;
+        background-size: 100%;
+        max-width: 500px;
+    }
+
+    .projectDialog .description{
+        width:auto;
+        max-width: 500px;
+    }
+    .projectDialog .thingsLearnt{
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 90%;
+        position: relative;
+        overflow:visible;
+    }
+
+    .thingsLearnt .learntThing {
+        max-width: 100px;
+    }
+
+    .thingsLearntTitle{
+        position: absolute;
+        padding-top: 10px;
+        top:-35px;
+        background-color: transparent;
+        left: 10px;
+    }
+
+    .project {
+        width: 90%;
+    }
+}

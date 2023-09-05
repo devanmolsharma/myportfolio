@@ -1,0 +1,21 @@
+aside{
+    z-index: 1;
+    margin-top: 20px;
+    float: left;
+    background-color: black;
+    display: flex;
+    overflow-x: auto;
+    transition: 400ms;
+    overflow-y:visible;
+    scrollbar-color: transparent transparent;
+    flex-direction: column;
+}
+
+aside>b{
+    padding: 10px;
+}
+
+hr{
+    width: 90%;
+    color: rgba(255, 255, 255, 0.353);
+}
