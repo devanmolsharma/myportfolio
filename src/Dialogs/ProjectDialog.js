@@ -3,6 +3,8 @@ import { GiCrossMark } from 'react-icons/gi';
 import Comments from './Comments';
 
 
+
+
 function ProjectDialog(params) {
     return (<div className='projectDialog'>
         <div className='project'>
@@ -14,7 +16,7 @@ function ProjectDialog(params) {
             params.project.thingsLearnt.map((e) => { return <div className='learntThing'>{e}</div> })
             }
         </div>
-        <Comments className='dialogComments' comments={params.project.comments}/>
+        <Comments className='dialogComments' comments={params.project.comments} onNewComment={(name,comment)=>{params.handleComment(params.id,name,comment);}}/>
         <GiCrossMark className='exitIcon' onClick={() => { params.onExit(); }}></GiCrossMark>
 
 

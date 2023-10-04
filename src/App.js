@@ -3,9 +3,11 @@ import Content from './Content/Content';
 import NavBar from './Navigation/NavBar';
 import SideBar from './Sidebar/SideBar';
 import { useEffect, useState } from 'react';
-import projectsArray from './data/projects.json';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import About from './About/About';
+
+
+
 
 function App() {
   let [width, setWidth] = useState((window.innerWidth));
@@ -14,7 +16,8 @@ function App() {
 
   const [short, setShort] = useState(true);
 
-  const [projects, setProjects] = useState(projectsArray);
+  const [projects, setProjects] = useState([]);
+  let projectsArray = [];
 
   useEffect(() => {
     if (projects) {
@@ -23,7 +26,13 @@ function App() {
         projectsArray = projects;
       }
     }
-  }, [projects])
+  }, [projects]);
+
+  useEffect(() => {
+    fetch("https://troubled-series.000webhostapp.com/get-projects.php").then((res) => res.json()).then((json) => {
+      setProjects(json);
+    })
+  }, [])
 
 
   window.addEventListener('resize', () => {
@@ -53,7 +62,7 @@ function App() {
             </div></>
         } />
         <Route path='*' element={<>
-          <NavBar projects={projects} setProjects={setProjects} showSearchbar={false} toggler={setShort} short={short} width={width} height={height}/>
+          <NavBar projects={projects} setProjects={setProjects} showSearchbar={false} toggler={setShort} short={short} width={width} height={height} />
           {(!short || width > 800) && <SideBar toggler={setShort} short={short} width={width} height={height} />}
         </>
         } />

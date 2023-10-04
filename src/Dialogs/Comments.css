@@ -45,6 +45,8 @@
     border-radius: 20px 20px 0px 0px;
     overflow: scroll;
     scrollbar-width: none;
+    flex-direction: column-reverse;
+    display: flex;
 }
 
 .comments .nameBox {
