@@ -1,11 +1,14 @@
 .navigation {
+    transition: 0.3s;
     display: flex;
-    height: 40px;
+    padding-left: 100%;
+    height: 80px;
     width: 100%;
     font-weight: bold;
     font-size: 20px;
     align-items: baseline;
     justify-content: space-between;
+    overflow: hidden;
 
 }
 
@@ -87,6 +90,7 @@
 }
 
 .navigation .searchBar {
+    
     flex: 4;
     display: flex;
     align-items: baseline;
@@ -112,6 +116,12 @@
         text-align: center;
     }
 
+}
+
+@media (max-width:900px){
+    .TopCamera{
+        visibility: hidden;
+    }
 }
 
 

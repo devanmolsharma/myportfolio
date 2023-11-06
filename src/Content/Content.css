@@ -3,8 +3,23 @@
     overflow: auto;
 }
 
-.allBody{
-    margin-top: 3dvh;
+.content>*:not(.background){
+    padding-top: 20px;
+    opacity: 0;
 }
 
+.allBody .background {
+    transition: opacity 4s ease-out;
+    z-index: -10;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    background-image: url("../About/bg.jpg");
+
+    /* Full height */
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 

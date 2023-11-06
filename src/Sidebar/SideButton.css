@@ -1,6 +1,6 @@
 .buttonDiv{
     display: flex;
-    background-color: black;
+    background-color: transparent;
     border-radius: 20px;
     justify-content: left;
     padding: 10px;
@@ -21,6 +21,7 @@
 
 .btnLink{
     text-decoration: none;
+    background-color: transparent;
 }
 
 .buttonDiv b{

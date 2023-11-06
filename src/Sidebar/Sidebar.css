@@ -2,15 +2,22 @@ aside{
     z-index: 1;
     margin-top: 20px;
     float: left;
-    background-color: black;
+    /* background-color: rgba(251, 249, 249, 0.199); */
     display: flex;
     overflow-x: auto;
     transition: 400ms;
     overflow-y:visible;
     scrollbar-color: transparent transparent;
     flex-direction: column;
+    backdrop-filter:blur(10px);
 }
 
+aside *{
+    background-color: black;
+}
+hr{
+    margin: 0px;
+}
 aside>b{
     padding: 10px;
 }

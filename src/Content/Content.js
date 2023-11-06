@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectDialog from '../Dialogs/ProjectDialog';
 import './Content.css';
 import TagsList from './TagsList';
@@ -10,6 +10,17 @@ function Content(params) {
     const count = params.width < 800 ? 1 : (params.width > 1150 ? 3 : 2);
     const tags = ['All', 'HTML and JS', 'React js', 'Python', 'Flutter (android)', 'Artificial Intelligence', 'Mini Projects'];
     var projectElements = [];
+    useEffect(() => {
+        setTimeout(() => {
+            let items = document.querySelectorAll('.content>*:not(.background)');
+            for (let index = 0; index < items.length; index++) {
+                if (items[index].classList) {
+                    items[index].style.transition = `${0.3 + (0.2 * index)}s`
+                    items[index].style.opacity = 1;
+                }
+            }
+        }, 1000);
+    }, [])
 
     function showDetails(id) {
         setId(id);
@@ -24,7 +35,7 @@ function Content(params) {
         copy[id]["views"] += 1;
         showDetails(id);
         params.setProjects(copy);
-        fetch("https://troubled-series.000webhostapp.com/increaseViewCount.php?id="+copy[id].primary);
+        fetch("https://troubled-series.000webhostapp.com/increaseViewCount.php?id=" + copy[id].primary);
     }
 
     function handleComment(id, name, comment) {
@@ -65,9 +76,9 @@ function Content(params) {
 
 
     return (<main className='allBody'>
-
+        <div id='proBg' className="background"></div>
         {projectId && <ProjectDialog project={params.projects[projectId]} id={projectId} onExit={onExit} handleComment={handleComment} />}
-        <TagsList onSelected={() => { }} tags={tags} />
+        {params.width > 1150 && <TagsList onSelected={() => { }} tags={tags} />}
         <div className='content' style={{ height: params.height * 0.9 + "px", gridTemplateColumns: "1fr ".repeat(count), ...params.style ?? {} }}>
             {projectElements}
         </div>

@@ -1,6 +1,6 @@
 
 .VideoThumbnail{
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
     background-color:transparent;
     width:360px;
     background-repeat: no-repeat;
@@ -26,4 +26,21 @@
 
 .videoBox:hover{
     cursor: pointer;
+}
+
+
+.videoDesctiption{
+    background-color: transparent;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.186);
+    bottom: 30px;
+    backdrop-filter: blur(20px);
+}
+
+.videoDesctiption *{
+    margin: 3px;
+}
+
+.videoDesctiption i{
+    text-decoration: wavy;
 }

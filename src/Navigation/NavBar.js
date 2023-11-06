@@ -1,17 +1,14 @@
-import { AiFillBook } from "react-icons/ai";
 import IconButton from './IconButton';
 import './NavBar.css'
 import SearchBar from './SearchBar';
-import { MdKeyboardVoice } from 'react-icons/md'
-import { SlCamrecorder } from 'react-icons/sl';
-import { FaRegBell } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import ImageButton from '../Content/ImageButton';
-import ResumeDialog from "../Dialogs/ResumeDialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import search from "../Utility/search";
 
 function NavBar(params) {
+    useEffect(()=>{
+        document.getElementsByClassName('navigation')[0].style.paddingLeft = '0px';
+    })
 
     const [showResume, setResumeVisible] = useState(false);
     let expanded = false;
@@ -41,19 +38,14 @@ function NavBar(params) {
 
 
             &nbsp;&nbsp;
-            <div className="resumeButton" onClick={handleonClick}>
-                <AiFillBook className="book" />
-                &nbsp;<b>Contact </b>
-                <button className="resumeClose" onClick={handleonClickOut}>x</button>
-                {showResume && <ResumeDialog className="resumeDialog" />}
-            </div>
             <div className="Spacer"></div>
             {(params.width
                 > 500) && <div className='Spacer' ></div>
             }
 
             {params.showSearchbar && <> <div className='searchBar'><SearchBar projects={params.projects} setProjects={params.setProjects}  search = {search} className="searchInput" placeholder="Search" />
-                <IconButton className='Mike' icon={MdKeyboardVoice} /></div>
+                {/* <IconButton className='Mike' icon={MdKeyboardVoice} /> */}
+                </div>
             {(params.width > 500) && <div className='Spacer'></div>
             }</>}
 

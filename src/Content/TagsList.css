@@ -1,4 +1,5 @@
 .tagsList{
+    padding-top: 20px;
     height: 50px;
     min-width: 100%;
     display: flex;
