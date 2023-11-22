@@ -8,23 +8,23 @@ function SearchBar(props) {
         setStyle(visibility == 'hidden' ? 'visible' : 'hidden');
     };
 
-    return (
-        <div className={`SearchBase ${props.className ?? ''}`} >
-            <AiOutlineSearch style={{ 'visibility': visibility }} className='beforeImage' src='search.png' />
-            <input onChange={() => {
-                props.search(props.projects, document.getElementsByClassName("search")[0].value, props.setProjects)
+    return (<div className={`SearchBase ${props.className ?? ''}`}>
+        <form action="">
+            <input onChange={(e) => {
+                props.search(props.projects, e.target.value, props.setProjects);
                 setTimeout(() => {
                     let items = document.querySelectorAll('.content>*:not(.background)');
                     for (let index = 0; index < items.length; index++) {
                         if (items[index].classList) {
-                            items[index].style.transition = `200ms`
+                            items[index].style.transition = `${0.3 + (0.2 * index)}s`
                             items[index].style.opacity = 1;
                         }
                     }
                 }, 1000);
-            }} className="search" onFocus={changeStyle} onBlur={changeStyle} placeholder={"   " + props.placeholder} />
-            <button alt='search' className='searchwithIcon'><AiOutlineSearch className='SearchIcon' /></button>
-        </div>);
+            }} type="search" required />
+            <i class="fa fa-search"></i>
+        </form></div>);
+
 }
 
 export default SearchBar; 

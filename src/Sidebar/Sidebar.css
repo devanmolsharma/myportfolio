@@ -1,6 +1,6 @@
 aside{
     z-index: 1;
-    margin-top: 20px;
+    padding-top: 20px;
     float: left;
     /* background-color: rgba(251, 249, 249, 0.199); */
     display: flex;
@@ -9,7 +9,7 @@ aside{
     overflow-y:visible;
     scrollbar-color: transparent transparent;
     flex-direction: column;
-    backdrop-filter:blur(10px);
+
 }
 
 aside *{

@@ -1,57 +1,90 @@
-.search{
+.SearchBase {
+    position: fixed;
+    right: 10px;
+    padding-top: 10px;
+}
+
+.SearchBase * {
     color: black;
-    font-size: 15px;
-    height: 35px;
-    width: 100%;
-    border: 1px solid rgba(128, 128, 128, 0.455);
-    border-radius: 20px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
 }
 
-.SearchBase{
-    display: flex;
-    align-items: baseline;
-}
-
-.searchwithIcon{
+.SearchBase form {
     position: relative;
-    top:2px;
-    bottom: 6px;
-    width: 60px;
-    height: 39px;
-    border: 1px solid rgba(128, 128, 128, 0.455);
-    border-radius: 20px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    background-color: rgb(36, 35, 35);
-}
-
-.beforeImage{
-    border: 1px solid rgba(57, 84, 203, 0.745);
-    border-radius: 20px;
-    padding-right: 10px;
-    border-right: 0;
-    min-height: 27.5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
     padding: 5px;
-    padding-left: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    position: relative;
-    top:13.5px;
-}
-.SearchIcon{
-    height: 20px;
-    width: 20px;
-    background-color: rgb(36, 35, 35);
-}
-.searchwithIcon:hover{
-    cursor:pointer;
 }
 
-.search:focus{
-    outline: none;
-    border-color: rgba(57, 84, 203, 0.745);
-    border-radius: 0;
-    border-left: none;
+.SearchBase input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    ;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.SearchBase .fa {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+.SearchBase form:hover,
+.SearchBase form:valid {
+    width: min(80vw, 350px);
+    cursor: pointer;
+}
+
+.SearchBase form:hover input,
+.SearchBase form:valid input {
+    display: block;
+}
+
+.SearchBase form:hover .fa,
+.SearchBase form:valid .fa {
+    background: #07051a;
+    color: white;
+}
+
+
+.SearchBase a {
+    display: none;
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.SearchBase form:valid a {
+    display: block;
 }
