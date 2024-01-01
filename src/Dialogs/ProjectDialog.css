@@ -113,7 +113,7 @@
 .thingsLearnt .learntThing {
     color: rgb(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.51);
-    height: 40px;
+    min-height: 40px;
     text-align: center;
     margin: auto;
     margin-top: 5px;
@@ -162,7 +162,8 @@
     }
 
     .thingsLearnt .learntThing {
-        max-width: 100px;
+        padding: 1px;
+        max-width: 150px;
     }
 
     .thingsLearntTitle{
