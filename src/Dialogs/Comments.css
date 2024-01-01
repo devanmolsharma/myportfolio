@@ -1,7 +1,7 @@
 .comments {
     margin: 30px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.316);
+    background-color: rgba(255, 255, 255, 0.741);
     flex: 1;
     min-width: 300px;
     background-repeat: no-repeat;
@@ -17,10 +17,11 @@
     border-radius: 10px 10px 10px 0px;
     padding: 10px;
     margin-top: 40px;
-    background-color: rgba(30, 32, 32, 0.253);
+    background-color: rgba(48, 44, 158, 0.253);
 }
 
 .comments * {
+    color: black;
     background-color: transparent;
 }
 

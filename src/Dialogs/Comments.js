@@ -5,7 +5,7 @@ function Comments(params) {
 
     useEffect(() => {
         document.getElementsByClassName("commentsBox")[0].scrollBy(0,-1000);
-
+        
     }, [])
     
     return (<div className={'comments ' + (params.className ?? "")}>

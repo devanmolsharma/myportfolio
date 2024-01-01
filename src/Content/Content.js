@@ -3,12 +3,22 @@ import ProjectDialog from '../Dialogs/ProjectDialog';
 import './Content.css';
 import TagsList from './TagsList';
 import VideoBox from './VideoBox';
+import search from "../Utility/search";
+let projectCopy = [];
 
 
 function Content(params) {
     const [projectId, setId] = useState(null);
     const count = params.width < 800 ? 1 : (params.width > 1150 ? 3 : 2);
-    const tags = ['All', 'HTML and JS', 'React js', 'Python', 'Flutter (android)', 'Artificial Intelligence', 'Mini Projects'];
+    let tags = ['All'];
+    if((projectCopy.length < 1)){
+        projectCopy = params.projects;
+    }
+    for (let i = 0; i < Object.keys(projectCopy).length; i++) {
+        let element = projectCopy[`${i}`];
+        tags.push(...element.thingsLearnt)
+    }
+    tags = new Array(...new Set(tags));
     var projectElements = [];
 
     function handleScroll() {
@@ -62,7 +72,6 @@ function Content(params) {
                 "comment": comment
             });
             params.setProjects(copy);
-            // Assuming 'body' contains the data you want to send as query parameters
             id = copy[id].primary;
             name = encodeURIComponent(name);
             comment = encodeURIComponent(comment);
@@ -72,7 +81,7 @@ function Content(params) {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data); // Handle the response data here
+                    console.log(data); 
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -93,7 +102,7 @@ function Content(params) {
     return (<main className='allBody'>
         <div id='proBg' className="background"></div>
         {projectId && <ProjectDialog project={params.projects[projectId]} id={projectId} onExit={onExit} handleComment={handleComment} />}
-        {/* {params.width > 1150 && <TagsList onSelected={() => { }} tags={tags} />} */}
+        {params.width > 1150 && <TagsList onSelected={() => { }} tags={tags} projects = {params.projects} changer = {params.setProjects} search = {search}/>}
 
         <div className='content scrollport' onScroll={handleScroll} style={{ height: params.height * 0.9 + "px", gridTemplateColumns: "1fr ".repeat(count), ...params.style ?? {} }}>
             <div></div>
@@ -104,12 +113,12 @@ function Content(params) {
             let nestedElement = document.getElementsByClassName('scrollport')[0];
             if (e.target.checked) {
                 nestedElement.scrollBy({
-                    left: nestedElement.scrollWidth + 40,
+                    left: nestedElement.scrollWidth,
                     behavior: 'smooth'
                 });
             } else {
                 nestedElement.scrollBy({
-                    left: -nestedElement.scrollWidth - 40,
+                    left: -nestedElement.scrollWidth,
                     behavior: 'smooth'
                 });
             }

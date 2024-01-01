@@ -74,7 +74,7 @@ function App() {
           <>
             <About />
             <NavBar projects={projects} setProjects={setProjects} showSearchbar={false} toggler={setShort} short={short} width={width} height={height} />
-            {(!short || width > 800) && <SideBar exitFun={async () => {
+            { <SideBar exitFun={async () => {
               setTimeout(() => {
                 let items = document.querySelectorAll('.aboutMe *:not(.background)');
                 for (const item of items) {

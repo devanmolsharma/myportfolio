@@ -2,9 +2,6 @@ import { SiAboutdotme } from "react-icons/si";
 import { GiMagicAxe } from "react-icons/gi"; 
 import SideButton from './SideButton';
 import './Sidebar.css';
-import { GiAerialSignal, GiClothes, GiCryoChamber, GiFilmProjector, GiFireGem, GiHelp, GiKidSlide, GiLightBulb, GiMusicSpell, GiMusicalNotes, GiNewspaper, GiShorts, GiSportMedal, GiTv, GiWatch } from 'react-icons/gi';
-import { AiFillAlert, AiFillBook, AiFillFlag, AiFillSetting, AiFillYoutube, AiOutlineArrowDown, AiOutlineHistory, AiOutlineLike, AiOutlineVideoCamera, AiTwotoneHome } from 'react-icons/ai';
-import ImageButton from '../Content/ImageButton';
 
 
 function SideBar(params) {

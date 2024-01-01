@@ -1,4 +1,4 @@
-.buttonDiv{
+.buttonDiv {
     display: flex;
     background-color: transparent;
     border-radius: 20px;
@@ -9,27 +9,38 @@
     align-items: center;
 }
 
-.buttonDiv img{
+.buttonDiv img {
     position: relative;
     bottom: 5px;
 }
 
-.buttonDiv:hover{
+.buttonDiv:hover {
     /* background-color: rgba(255, 240, 251, 0.323); */
     cursor: pointer;
 }
 
-.btnLink{
+.btnLink {
     text-decoration: none;
     background-color: transparent;
 }
 
-.buttonDiv b{
+.buttonDiv b {
     background-color: transparent;
 }
 
-.buttonDiv .Sideicon{
+.buttonDiv .Sideicon {
     height: 20px;
     flex-basis: 40px;
     background-color: transparent;
+}
+
+@media screen and (max-width:500px) {
+    .btnLink:nth-child(1) {
+        display: none;
+    }
+
+    .btnLink:nth-child(2) {
+        position: relative;
+        top: 30%;
+    }
 }

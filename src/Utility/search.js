@@ -2,12 +2,12 @@ let base;
 
 
 function search(projects, keyword, changer) {
-    if(!base)base = projects;
+    if (!base) base = projects;
+    if (keyword == 'All') keyword = '';
     let newProjects = [];
     for (const key in Object.keys(base)) {
         let element = base[key];
-        console.log(JSON.stringify(element).indexOf(keyword));
-        if (JSON.stringify(element).indexOf(keyword) != -1) {
+        if (JSON.stringify(element).toLowerCase().indexOf(keyword.toLowerCase()) != -1) {
             newProjects.push(element);
         }
     }
