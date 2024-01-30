@@ -1,8 +1,17 @@
+
+body{
+  /* margin: 0; */
+  max-height: 100vh;
+  overflow: hidden;
+  /* overflow-y: hidden; */
+  /* overflow-x: scroll; */
+}
+
 body {
   background-color: black;
 }
 
-*{
+* {
   color: white;
 }
 
