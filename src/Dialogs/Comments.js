@@ -1,34 +1,40 @@
-import './Comments.css';
+import React, { useEffect } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import { useEffect } from 'react';
+import './Comments.css'; // Keep this if you have additional custom styles
+
 function Comments(params) {
-
     useEffect(() => {
-        document.getElementsByClassName("commentsBox")[0].scrollBy(0,-1000);
-        
-    }, [])
-    
-    return (<div className={'comments ' + (params.className ?? "")}>
-        <div className='commentsBox'>
-            {params.comments.map((comment) => {
-                return <div className='comment'>
-                    <div className='commentorName'>{comment.name}</div>
-                    <div className='commentDate'>{comment.date}</div>
-                    {comment.comment}
-                </div>
-            })}
-        </div>
-        <input type='text' placeholder='Enter your name' className='nameBox' />
-        <input type='text' placeholder='Comment here!' className='addCommentBox' /><AiOutlineArrowRight className='submitButton' onClick={() => {
-            let namebox = document.getElementsByClassName("nameBox")[0];
-            let commentBox = document.getElementsByClassName("addCommentBox")[0];
-            params.onNewComment(namebox.value, commentBox.value);
-            namebox.value = "";
-            commentBox.value = "";
-            setTimeout((() => { document.getElementsByClassName("commentsBox")[0].scrollBy(0,-200) }), 300);
-        }} />
+        document.querySelector(".comments-box").scrollBy(0, -1000);
+    }, []);
 
-    </div>)
+    return (
+        <div className={`comments ${params.className ?? ""}`}>
+            <h2 className='mb-1'>Comments</h2>
+            <div className='comments-box overflow-auto p-3 mb-3 bg-light rounded'>
+                {params.comments.map((comment, index) => (
+                    <div key={index} className='mb-2'>
+                        <div className='fw-bold'>{comment.name}</div>
+                        <div className='text-muted'>{comment.date}</div>
+                        <p>{comment.comment}</p>
+                    </div>
+                ))}
+            </div>
+            <div className='input-group mb-3'>
+                <input type='text' className='form-control' placeholder='Enter your name' aria-label="Recipient's name" />
+                <input type='text' className='form-control' placeholder='Comment here!' aria-label="Comment" />
+                <button className='btn btn-outline-secondary' type='button' onClick={() => {
+                    let nameBox = document.querySelector(".nameBox");
+                    let commentBox = document.querySelector(".addCommentBox");
+                    params.onNewComment(nameBox.value, commentBox.value);
+                    nameBox.value = "";
+                    commentBox.value = "";
+                    setTimeout(() => { document.querySelector(".comments-box").scrollBy(0, -200); }, 300);
+                }}>
+                    <AiOutlineArrowRight />
+                </button>
+            </div>
+        </div>
+    );
 }
 
 export default Comments;

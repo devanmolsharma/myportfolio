@@ -10,8 +10,9 @@ let projectCopy = [];
 function Content(params) {
     const [projectId, setId] = useState(null);
     const count = params.width < 800 ? 1 : (params.width > 1150 ? 3 : 2);
+    const [show, setShow] = useState(false);
     let tags = ['All'];
-    if((projectCopy.length < 1)){
+    if ((projectCopy.length < 1)) {
         projectCopy = params.projects;
     }
     for (let i = 0; i < Object.keys(projectCopy).length; i++) {
@@ -23,21 +24,21 @@ function Content(params) {
 
     function handleScroll() {
         if (window.screen.width < 500) {
-        const children = document.getElementsByClassName('scrollport')[0].children;
-        const screenWidth = window.visualViewport.width;
-        for (let i = 0; i < children.length; i++) {
-            const box = children[i].getBoundingClientRect();
-            const x = box.x;
-            const width = box.width;
+            const children = document.getElementsByClassName('scrollport')[0].children;
+            const screenWidth = window.visualViewport.width;
+            for (let i = 0; i < children.length; i++) {
+                const box = children[i].getBoundingClientRect();
+                const x = box.x;
+                const width = box.width;
 
-            if ((x < (screenWidth / 2) && (x + width) > (screenWidth / 2)) && (i > (children.length / 2))) {
-                document.getElementById('animation3').checked = true;
-            }
-            else if((x < (screenWidth / 2) && (x + width) > (screenWidth / 2))) {
-                document.getElementById('animation3').checked = false;
+                if ((x < (screenWidth / 2) && (x + width) > (screenWidth / 2)) && (i > (children.length / 2)) && !document.getElementById('animation3').checked) {
+                    document.getElementById('animation3').checked = true;
+                }
+                else if ((x < (screenWidth / 2) && (x + width) > (screenWidth / 2)) && document.getElementById('animation3').checked) {
+                    document.getElementById('animation3').checked = false;
 
-            }
-            children[i].classList.toggle('active', (x < (screenWidth / 2) && (x + width) > (screenWidth / 2)));
+                }
+                // children[i].classList.toggle('active', (x < (screenWidth / 2) && (x + width) > (screenWidth / 2)));
 
 
             }
@@ -49,6 +50,7 @@ function Content(params) {
 
     function showDetails(id) {
         setId(id);
+        setShow(true);
     }
 
     function onExit() {
@@ -81,7 +83,7 @@ function Content(params) {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data); 
+                    console.log(data);
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -101,11 +103,11 @@ function Content(params) {
 
     return (<main className='allBody'>
         <div id='proBg' className="background"></div>
-        {projectId && <ProjectDialog project={params.projects[projectId]} id={projectId} onExit={onExit} handleComment={handleComment} />}
+        {params.projects && <ProjectDialog project={params.projects[projectId]} id={projectId} onExit={onExit} handleComment={handleComment} show={show} setShow={setShow} />}
 
         <div className='content scrollport' onScroll={handleScroll} style={{ height: params.height * 0.9 + "px", gridTemplateColumns: "1fr ".repeat(count), ...params.style ?? {} }}>
             <div></div>
-        <TagsList onSelected={() => { }} tags={tags} projects = {params.projects} changer = {params.setProjects} search = {search}/>
+            <TagsList onSelected={() => { }} tags={tags} projects={params.projects} changer={params.setProjects} search={search} />
             {projectElements}
             <div></div>
         </div>

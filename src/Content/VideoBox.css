@@ -183,7 +183,7 @@
 @media (max-width:500px) {
     .nft {
         min-width: min(90vw, 400px);
-        max-width: min(100vw, 400px);
+        min-height: 80vw;
         padding: 5px;
     }
 }

@@ -1,182 +1,62 @@
-.projectDialog {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgba(202, 212, 212, 0.82);
-    backdrop-filter: blur(10px);
-    width: 10%;
-    height: 10%;
-    transition: 400ms;
-    position: fixed;
-    z-index: 10;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    padding: 5px;
-    scrollbar-width: none;
-    justify-content: center;
-
+.modal-header-custom {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
 }
 
-.projectDialog .thumbnail {
-    margin: 30px;
-    /* box-shadow: 5px 5px rgba(0, 0, 0, 0.263); */
-    /* background-color: rgba(236, 233, 233, 0.042); */
-    width: 500px;
-    border-radius: 40px;
-    background-size: 100%;
-    height: 250px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.modal-body-custom {
+    background-color: #ffffff;
 }
 
-.projectDialog .project {
-    background-color: transparent;
+.modal-footer-custom {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.project-details {
     display: flex;
     flex-direction: column;
-    min-width: 350px;
+    gap: 16px;
 }
 
-.projectDialog .description {
-    position: relative;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
-    color: rgba(21, 20, 20, 0.781);
-    margin: 30px;
-    background-color: transparent;
-    width: 500px;
-    background-size: 100%;
-    min-height:fit-content;
-    flex: 1;
-    font-size: 25px;
-    background-color: rgba(148, 143, 143, 0.311);
-    /* padding: 10px; */
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 80px;
-    backdrop-filter: blur(60px);
-    bottom: 120px;
+.project-thumbnail {
+    border-radius: 8px;
+    max-height: 300px;
+    object-fit: cover;
 }
 
-.description .goToProject{
-     min-width: 80%;
-     font-size: 1.1rem;
-     position: absolute;
-     bottom: 20px;
-     left: 50%;
-     transform: translate(-50%,0%);
-     padding: 10px;
-     background-color: blue;
-     border: none;
-     border-radius: 10px;
-     min-height: 30px;
+.project-description p {
+    margin-bottom: 16px;
 }
 
-.description .goToProject:hover{
-    cursor: pointer;
-}
-.projectDialog .dialogComments {
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
-    position: relative;
+.project-link-btn {
+    transition: all 0.3s ease-in-out;
 }
 
-.projectDialog .thingsLearnt {
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
-    margin: 10px;
-    margin-top: 30px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.27);
-    flex: 1;
-    min-width: 250px;
-    max-width: 250px;
-    background-repeat: no-repeat;
-    overflow: scroll;
-    max-height: 90%;
-    position: relative;
-}
-.exit{
-    position: absolute;
-    right: 20px;
-}
-.projectDialog .exitIcon {
-    position: sticky;
-    scale: 1.5;
-    top: 10px;
-    background-color: transparent;
+.project-link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.projectDialog .exitIcon:hover {
-    cursor: pointer;
+.learnings {
+    margin-top: 32px;
 }
 
-.thingsLearnt .learntThing {
-    color: rgb(255, 255, 255);
-    border: 1px solid rgba(255, 255, 255, 0.51);
-    min-height: 40px;
-    text-align: center;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 13px;
-    width: 90%;
-    font-size: larger;
-    background-color: rgba(57, 64, 93, 0.574);
+.learnings-title {
+    margin-bottom: 16px;
 }
 
-.thingsLearntTitle {
-    padding: 5px;
-    color: #fff;
-    text-align: center;
-    margin: auto;
-    border: 1px dotted white;
-    border-bottom: none;
-    background-color: rgba(0, 0, 0, 0.705);
-    height: 40px;
-
-    border-radius: 20px 20px 0px 0px;
+.learning-item {
+    background-color: #eff0f1;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
 
+.project-comments {
+    margin: 0px;
+    margin-top: 24px;
+}
 
-@media (max-width:700px) {
-    
-    .projectDialog{
-        overflow-x: visible;
-    }
-
-    .projectDialog .thumbnail{
-        width:auto;
-        background-size: 100%;
-        max-width: 500px;
-    }
-
-    .projectDialog .description{
-        width:auto;
-        max-width: 500px;
-    }
-    .projectDialog .thingsLearnt{
-        display: flex;
-        flex-wrap: wrap;
-        min-width: 90%;
-        position: relative;
-        overflow:visible;
-    }
-
-    .thingsLearnt .learntThing {
-        padding: 1px;
-        max-width: 150px;
-    }
-
-    .thingsLearntTitle{
-        position: absolute;
-        padding-top: 10px;
-        top:-60px;
-        background-color: transparent;
-        left: 10px;
-    }
-
-    .project {
-        width: 90%;
-    }
+.project-modal {
+    min-width: 80vw;
 }
