@@ -16,8 +16,8 @@ function ProjectDialog(params) {
 
     useEffect(() => {
         let dialog = document.getElementsByClassName("projectDialog")[0];
-        dialog.style.width = '100%'
-        dialog.style.height = '100%'
+        dialog.style.width = '80%'
+        dialog.style.height = '80%'
 
         window.addEventListener('popstate', onBackButtonEvent);
 

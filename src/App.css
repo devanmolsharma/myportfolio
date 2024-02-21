@@ -1,20 +1,6 @@
-
-body{
-  /* margin: 0; */
-  max-height: 100vh;
-  overflow: hidden;
-  /* overflow-y: hidden; */
-  /* overflow-x: scroll; */
-}
-
-body {
-  background-color: black;
-}
-
-* {
-  color: white;
-}
-
-*::-webkit-scrollbar {
-  display: none;
+#root{
+  max-height: 750px;
+  /* min-width: 100%; */
+  position: relative;
+  /* overflow: scroll; */
 }

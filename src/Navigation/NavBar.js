@@ -34,8 +34,6 @@ function NavBar(params) {
     }
     return (
         <nav className='navigation' style={params.style ?? {}}>
-            <IconButton className='TopCamera' icon={GiHamburgerMenu} onClick={() => { params.toggler((!params.short)) }} />
-
 
             &nbsp;&nbsp;
             <div className="Spacer"></div>

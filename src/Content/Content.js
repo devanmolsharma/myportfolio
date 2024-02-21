@@ -102,10 +102,10 @@ function Content(params) {
     return (<main className='allBody'>
         <div id='proBg' className="background"></div>
         {projectId && <ProjectDialog project={params.projects[projectId]} id={projectId} onExit={onExit} handleComment={handleComment} />}
-        {params.width > 1150 && <TagsList onSelected={() => { }} tags={tags} projects = {params.projects} changer = {params.setProjects} search = {search}/>}
 
         <div className='content scrollport' onScroll={handleScroll} style={{ height: params.height * 0.9 + "px", gridTemplateColumns: "1fr ".repeat(count), ...params.style ?? {} }}>
             <div></div>
+        <TagsList onSelected={() => { }} tags={tags} projects = {params.projects} changer = {params.setProjects} search = {search}/>
             {projectElements}
             <div></div>
         </div>

@@ -1,12 +1,14 @@
 .tagsList{
-    padding-top: 20px;
+    z-index: 0;
+    /* position: absolute; */
+    top: 0px;
     height: 50px;
     min-width: 100%;
     display: flex;
     scrollbar-width: none;
 }
 .tags{
-    width: 90%;
+    width: 100%;
     justify-content: center;
     overflow-x: scroll;
     scrollbar-width: none;
@@ -15,7 +17,7 @@
 
 .tag{
     min-width:fit-content;
-    background-color: rgba(128, 128, 128, 0.301);
+    background-color: rgba(204, 188, 188, 0.301);
     margin: 10px;
     text-align: center;
     border-radius: 5px;
@@ -29,6 +31,6 @@
 
 
 .tag[current=true]{
-    background-color: white;
-    color:black;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.697);
 }
