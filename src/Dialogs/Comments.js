@@ -20,8 +20,8 @@ function Comments(params) {
                 ))}
             </div>
             <div className='input-group mb-3'>
-                <input type='text' className='form-control' placeholder='Enter your name' aria-label="Recipient's name" />
-                <input type='text' className='form-control' placeholder='Comment here!' aria-label="Comment" />
+                <input type='text' className='form-control nameBox' placeholder='Enter your name' aria-label="Recipient's name" />
+                <input type='text' className='form-control addCommentBox' placeholder='Comment here!' aria-label="Comment" />
                 <button className='btn btn-outline-secondary' type='button' onClick={() => {
                     let nameBox = document.querySelector(".nameBox");
                     let commentBox = document.querySelector(".addCommentBox");
